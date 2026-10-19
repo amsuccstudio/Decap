@@ -1,175 +1,592 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FAWLUX Mini</title>
-  <meta name="description" content="FAWLUX Mini — a simplified version of the FAWLUX website." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAWLUX — Perfectly stitched.</title>
+  <meta name="description" content="FAWLUX crafts premium menswear in Lagos: agbada, kaftan, shirts, and trousers. Perfectly stitched. Book an appointment on WhatsApp.">
+  <meta name="keywords" content="FAWLUX, bespoke, tailor, menswear, agbada, kaftan, native wear, Lagos, Badagry, Oko-Afo, tailoring">
+  
+  <!-- ✅ CANONICAL TAG ADDED -->
+  <link rel="canonical" href="https://fawlux.com.ng/" />
+  
+  <link rel="icon" type="image/x-icon" href="/favicon.ico?v=5">
+  <link rel="shortcut icon" href="/favicon.ico?v=5">
+  
+  <!-- Google Search Console Verification -->
+  <meta name="google-site-verification" content="rxFMCBjufeR1PpdXxgAGTrP8B1YquOBg6XkGm3bnGa4" />
+
+  <!-- Preload hero images -->
+  <link rel="preload" as="image" href="images/hero/hero1.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="images/hero/hero2.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="images/hero/hero3.webp" fetchpriority="high">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <!-- Google Business Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Tailor",
+    "name": "Fawlux",
+    "description": "Premium menswear tailoring specializing in agbada, kaftan, and bespoke suits in Lagos",
+    "url": "https://fawlux.com.ng/",
+    "telephone": "+2348079444199",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "11, Allah Dey Street, Oko-Afo",
+      "addressLocality": "Badagry",
+      "addressRegion": "Lagos",
+      "addressCountry": "NG"
+    },
+    "openingHours": [
+      "Mo-Fr 09:00-19:00",
+      "Sa 09:00-18:00"
+    ],
+    "priceRange": "₦₦₦"
+  }
+  </script>
 
-  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Universal Social Media Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fawlux.com.ng/">
+  <meta property="og:title" content="FAWLUX — Perfectly Stitched">
+  <meta property="og:description" content="Premium menswear tailoring in Lagos: agbada, kaftan, shirts, and trousers.">
+  <meta property="og:image" content="https://fawlux.com.ng/images/og/og1.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="FAWLUX">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FAWLUX — Perfectly Stitched">
+  <meta name="twitter:description" content="Premium menswear tailoring in Lagos: agbada, kaftan, shirts, and trousers.">
+  <meta name="twitter:image" content="https://fawlux.com.ng/images/og/og1.webp">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Breadcrumbs Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://fawlux.com.ng/"
+      }
+    ]
+  }
+  </script>
+
 </head>
 
 <body>
 
-  <!-- ===== HEADER ===== -->
-  <header class="site-header">
-    <div class="container nav-wrapper">
-      <a class="brand" href="#">
-        <span class="brand-text">F A W L U X</span>
-      </a>
+<!-- Welcome Screen -->
+<div id="welcome-screen" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#0a0a0a url('images/hero/hero2.webp') center/cover no-repeat;display:flex;justify-content:center;align-items:center;z-index:10000;opacity:1;transition:opacity 0.6s ease;">
+  <div style="text-align:center;color:white;padding:20px;max-width:500px;width:90%;background:rgba(0,0,0,0.65);border-radius:12px;">
+    <div style="font-family:'Playfair Display',serif;font-size:clamp(2rem, 5vw, 2.8rem);font-weight:900;letter-spacing:clamp(4px, 1vw, 6px);margin:0 0 12px 0;white-space:nowrap;overflow:visible;padding:0 5px;line-height:1.2;">F A W L U X</div>
+    <p style="color:#d4af37;font-size:clamp(0.85rem, 2vw, 0.95rem);letter-spacing:2px;margin:0 0 30px 0;text-transform:uppercase;font-weight:300;">Premium Bespoke Tailoring</p>
+    <button id="welcome-continue" style="background:transparent;color:#d4af37;border:2px solid #d4af37;padding:14px 40px;font-size:1rem;font-weight:700;letter-spacing:2px;border-radius:30px;cursor:pointer;transition:all 0.3s;margin-bottom:20px;display:block;width:100%;max-width:220px;margin-left:auto;margin-right:auto;">CONTINUE</button>
+    <a href="#" id="welcome-skip" style="color:rgba(255,255,255,0.6);font-size:0.85rem;text-decoration:none;letter-spacing:1px;transition:color 0.3s;display:inline-block;margin-top:10px;">Skip</a>
+  </div>
+</div>
 
-      <div class="header-controls">
-        <!-- Theme Switcher -->
-        <button class="theme-switcher" id="themeSwitcher" aria-label="Switch theme">
-          <svg class="theme-icon sun" viewBox="0 0 24 24" width="20" height="20">
-            <circle cx="12" cy="12" r="5" fill="currentColor"/>
-            <path fill="currentColor" d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
-          </svg>
-          <svg class="theme-icon moon" viewBox="0 0 24 24" width="20" height="20">
-            <path fill="currentColor" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
-          </svg>
-        </button>
+<script>
+// Welcome Screen Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  var welcome = document.getElementById('welcome-screen');
+  var continueBtn = document.getElementById('welcome-continue');
+  var skipLink = document.getElementById('welcome-skip');
+  var welcomeContent = welcome ? welcome.querySelector('div') : null;
+  var spinner = document.getElementById('loading-spinner');
+  
+  if (spinner) spinner.style.display = 'none';
+  
+  if (sessionStorage.getItem('fawlux-welcome-seen')) {
+    if (welcome) welcome.style.display = 'none';
+    return;
+  }
+  
+  function hideWelcome() {
+    if (!welcome) return;
+    welcome.style.opacity = '0';
+    setTimeout(function() {
+      welcome.style.display = 'none';
+    }, 600);
+    sessionStorage.setItem('fawlux-welcome-seen', 'true');
+  }
+  
+  if (continueBtn) {
+    continueBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      this.style.background = '#d4af37';
+      this.style.color = '#000';
+      hideWelcome();
+    });
+  }
+  
+  if (skipLink) {
+    skipLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      hideWelcome();
+    });
+  }
+  
+  if (welcome && welcomeContent) {
+    welcome.addEventListener('click', function(e) {
+      if (e.target === welcome) {
+        e.preventDefault();
+        e.stopPropagation();
+        welcomeContent.style.transform = 'scale(0.98)';
+        setTimeout(function() {
+          welcomeContent.style.transform = 'scale(1)';
+        }, 200);
+      }
+    });
+  }
+  
+  var autoCloseTimer = setTimeout(function() {
+    if (welcome && welcome.style.display !== 'none') {
+      hideWelcome();
+    }
+  }, 7000);
+  
+  if (continueBtn) {
+    continueBtn.addEventListener('click', function() {
+      clearTimeout(autoCloseTimer);
+    });
+  }
+  if (skipLink) {
+    skipLink.addEventListener('click', function() {
+      clearTimeout(autoCloseTimer);
+    });
+  }
+  
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && welcome && welcome.style.display !== 'none') {
+      hideWelcome();
+      clearTimeout(autoCloseTimer);
+    }
+  });
+});
+</script>
 
-        <!-- Search Icon -->
-        <button class="search-icon" id="searchIcon" aria-label="Search">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-          </svg>
-        </button>
+<!-- Loading Spinner -->
+<div id="loading-spinner" class="loading-spinner">
+  <div class="spinner"></div>
+  <p>F A W L U X</p>
+</div>
 
-        <!-- Cart Icon -->
-        <button class="cart-icon" id="cartIcon" aria-label="Open cart">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-            <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0020 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
-          </svg>
-          <span class="cart-badge" id="cartBadge">0</span>
-        </button>
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/2348079444199?text=Hello%20FAWLUX!%20I'd%20like%20to%20book%20an%20appointment." 
+   class="whatsapp-float" 
+   target="_blank" 
+   rel="noopener"
+   aria-label="Chat on WhatsApp">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893-.001-3.189-1.248-6.189-3.515-8.452"/>
+  </svg>
+</a>
 
-        <!-- Hamburger -->
-        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="container nav-wrapper">
+    <a class="brand" href="index.html" aria-label="FAWLUX Home">
+     <span class="brand-text">F A W L U X</span>
+    </a>
+
+    <div class="header-controls">
+      <!-- Theme Switcher -->
+      <button class="theme-switcher" id="themeSwitcher" aria-label="Switch theme">
+        <svg class="theme-icon sun" viewBox="0 0 24 24" width="20" height="20">
+          <path fill="currentColor" d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM6.34 5.16l-1.42 1.42c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.42-1.42c.39-.39.39-1.02 0-1.41a.996.996 0 00-1.41 0zm13.08 12.42l1.42 1.42c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41l-1.42-1.42c-.39-.39-1.02-.39-1.41 0a.996.996 0 000 1.41zM5.16 17.66l1.42-1.42c.39-.39.39-1.02 0-1.41a.996.996 0 00-1.41 0l-1.42 1.42c-.39.39-.39 1.02 0 1.41s1.02.39 1.41 0zm12.42-13.08l1.42-1.42c.39-.39.39-1.02 0-1.41a.996.996 0 00-1.41 0l-1.42 1.42c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0z"/>
+        </svg>
+        <svg class="theme-icon moon" viewBox="0 0 24 24" width="20" height="20">
+          <path fill="currentColor" d="M9.37 5.51A7.35 7.35 0 009.1 7.5c0 4.08 3.32 7.4 7.4 7.4.68 0 1.35-.09 1.99-.27A7.014 7.014 0 0112 19c-3.86 0-7-3.14-7-7 0-2.93 1.81-5.45 4.37-6.49zM12 3a9 9 0 109 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 01-4.4 2.26 5.403 5.403 0 01-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+
+      <!-- ===== CART ICON ===== -->
+      <button class="cart-icon" id="cartIcon" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+          <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0020 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+        </svg>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
     </div>
 
-    <!-- Mobile Navigation -->
+    <!-- ===== DESKTOP NAVIGATION ===== -->
     <nav id="primary-nav" class="nav-links" aria-label="Primary">
-      <a href="#">Home</a>
-      <a href="#products">Collection</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html">Home</a>
+      
+      <!-- Collection Dropdown -->
+      <div class="dropdown">
+        <a href="collection.html" class="dropdown-trigger">
+          Collection <i class="fa-solid fa-chevron-down"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="gallery.html">Gallery</a>
+          <a href="agbada.html">Agbada</a>
+          <a href="kaftan.html">Kaftan</a>
+          <a href="cv.html">Corporate & Vintage</a>
+        </div>
+      </div>
+      
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn-cta" href="https://wa.me/2348079444199" target="_blank" rel="noopener">Book Appointment</a>
     </nav>
-  </header>
-
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <div class="container hero-inner">
-      <h1>Premium Menswear, <span class="accent">Perfectly Stitched</span>.</h1>
-      <p class="lead">At FAWLUX, we craft timeless pieces — tailored to your exact fit and lifestyle.</p>
-      <div class="hero-cta">
-        <a class="btn-cta" href="#products">View Collection</a>
-        <a class="btn-ghost" href="#contact">Book Appointment</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== PRODUCTS ===== -->
-  <section class="products container" id="products">
-    <h2>Our Collection</h2>
-    <div class="product-grid">
-
-      <div class="product-card" data-code="FL-MINI-001" data-name="Classic Kaftan" data-description="Handcrafted kaftan for special occasions.">
-        <div class="product-image">
-          <img src="https://via.placeholder.com/400x500/1a1a1a/d4af37?text=Kaftan+1" alt="Classic Kaftan" loading="lazy" />
-        </div>
-        <div class="product-info">
-          <h4>Classic Kaftan</h4>
-          <p class="product-code">FL-MINI-001</p>
-          <button class="add-to-cart" data-code="FL-MINI-001">
-            <i class="fa-solid fa-plus"></i> Add to Cart
-          </button>
-        </div>
-      </div>
-
-      <div class="product-card" data-code="FL-MINI-002" data-name="Royal Agbada" data-description="Luxurious agbada with gold embroidery.">
-        <div class="product-image">
-          <img src="https://via.placeholder.com/400x500/1a1a1a/d4af37?text=Agbada+1" alt="Royal Agbada" loading="lazy" />
-        </div>
-        <div class="product-info">
-          <h4>Royal Agbada</h4>
-          <p class="product-code">FL-MINI-002</p>
-          <button class="add-to-cart" data-code="FL-MINI-002">
-            <i class="fa-solid fa-plus"></i> Add to Cart
-          </button>
-        </div>
-      </div>
-
-      <div class="product-card" data-code="FL-MINI-003" data-name="Premium Shirt" data-description="Tailored shirt for the modern gentleman.">
-        <div class="product-image">
-          <img src="https://via.placeholder.com/400x500/1a1a1a/d4af37?text=Shirt+1" alt="Premium Shirt" loading="lazy" />
-        </div>
-        <div class="product-info">
-          <h4>Premium Shirt</h4>
-          <p class="product-code">FL-MINI-003</p>
-          <button class="add-to-cart" data-code="FL-MINI-003">
-            <i class="fa-solid fa-plus"></i> Add to Cart
-          </button>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===== ABOUT ===== -->
-  <section class="about container" id="about">
-    <h2>About FAWLUX</h2>
-    <p>FAWLUX is a Lagos-based menswear brand driven by precision, artistry, and timeless style. Every piece is crafted with intention — because you deserve nothing less.</p>
-  </section>
-
-  <!-- ===== CONTACT ===== -->
-  <section class="contact container" id="contact">
-    <h2>Contact</h2>
-    <p>Book an appointment on WhatsApp: <a href="https://wa.me/2348079444199" target="_blank">+234 807 944 4199</a></p>
-  </section>
-
-  <!-- ===== SEARCH OVERLAY ===== -->
-  <div class="search-overlay" id="searchOverlay">
-    <div class="search-overlay-content">
-      <button class="search-close" id="searchClose">✕</button>
-      <input type="text" id="searchInput" placeholder="Search products..." autofocus />
-      <div id="searchResults" class="search-results"></div>
-    </div>
   </div>
+</header>
 
-  <!-- ===== CART MODAL ===== -->
-  <div class="cart-modal" id="cartModal">
-    <div class="cart-modal-content">
-      <div class="cart-modal-header">
-        <h2>Your Cart</h2>
-        <button class="cart-close" id="cartClose">&times;</button>
+<!-- ===== HERO SLIDER ===== -->
+<section class="hero hero-slider">
+  <input type="radio" name="hero-slide" id="slide1" checked>
+  <input type="radio" name="hero-slide" id="slide2">
+  <input type="radio" name="hero-slide" id="slide3">
+  
+  <div class="hero-slides">
+    <div class="hero-slide" id="slide1-content" style="background-image: url('images/hero/hero1.webp');">
+      <div class="hero-overlay"></div>
+      <div class="container hero-inner">
+        <h1>Premium Menswear, <span class="accent">Perfectly Stitched</span>.</h1>
+        <p class="lead">At FAWLUX, we craft timeless pieces — agbada, kaftan, shirts and trousers — tailored to your exact fit and lifestyle.</p>
+        <div class="hero-cta">
+          <a class="btn-cta" href="https://wa.me/2348079444199" target="_blank" rel="noopener">Book an Appointment</a>
+          <a class="btn-ghost" href="collection.html">View Collection</a>
+        </div>
       </div>
-      <div class="cart-items" id="cartItems">
-        <p class="empty-cart">Your cart is empty.</p>
+    </div>
+    
+    <div class="hero-slide" id="slide2-content" style="background-image: url('images/hero/hero2.webp');">
+      <div class="hero-overlay"></div>
+      <div class="container hero-inner">
+        <h2>Exquisite <span class="accent">Gold Embroidery</span></h2>
+        <p class="lead">Each piece is a masterpiece of craftsmanship and luxury.</p>
+        <div class="hero-cta">
+          <a class="btn-cta" href="https://wa.me/2348079444199" target="_blank" rel="noopener">Order Yours</a>
+          <a class="btn-ghost" href="collection.html">Explore Collection</a>
+        </div>
       </div>
-      <div class="cart-footer">
-        <button class="btn-cta" id="checkoutBtn">Checkout on WhatsApp</button>
+    </div>
+    
+    <div class="hero-slide" id="slide3-content" style="background-image: url('images/hero/hero3.webp');">
+      <div class="hero-overlay"></div>
+      <div class="container hero-inner">
+        <h2>Bespoke <span class="accent">Native Wear</span></h2>
+        <p class="lead">Traditional elegance meets modern tailoring.</p>
+        <div class="hero-cta">
+          <a class="btn-cta" href="https://wa.me/2348079444199" target="_blank" rel="noopener">Book Now</a>
+          <a class="btn-ghost" href="collection.html">See More</a>
+        </div>
       </div>
     </div>
   </div>
+  
+  <div class="hero-nav">
+    <label for="slide3" class="hero-prev">‹</label>
+    <label for="slide2" class="hero-next">›</label>
+  </div>
+  
+  <div class="hero-dots">
+    <label for="slide1" class="hero-dot"></label>
+    <label for="slide2" class="hero-dot"></label>
+    <label for="slide3" class="hero-dot"></label>
+  </div>
+</section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2026 FAWLUX. All Rights Reserved.</p>
+<!-- ===== ABOUT ===== -->
+<section class="about container fade-in">
+  <h2>About FAWLUX</h2>
+  <p>Founded by Fawaz Abdulkareem, the visionary behind FAWLUX (formerly AMSUCC BESPOKE),
+we are a Lagos-based menswear brand driven by precision, artistry, and timeless style.
+From regal nativewear to refined English tailoring, every piece embodies excellence in fit, fabric, and finishing —
+defined by clean lines, lasting craftsmanship, and understated elegance.
+Every stitch is intentional — because you deserve nothing less.</p>
+  <ul class="pill-list">
+    <li>Agbada &amp; Kaftan</li>
+    <li>Shirts &amp; Trousers</li>
+    <li>Embroidery &amp; Finishing</li>
+  </ul>
+</section>
+
+<!-- ===== FEATURES ===== -->
+<section class="feature-grid container fade-in">
+  <article>
+    <h3>Bespoke Fit</h3>
+    <p>Measurements taken with precision to achieve a refined silhouette that moves with you.</p>
+  </article>
+  <article>
+    <h3>Quality Fabrics</h3>
+    <p>We source breathable, durable fabrics that drape beautifully and last.</p>
+  </article>
+  <article>
+    <h3>Expert Craft</h3>
+    <p>Clean seams, strong hems, neat buttonholes — finishing that speaks for itself.</p>
+  </article>
+</section>
+
+<!-- ===== AGBADA SLIDER (Homepage) ===== -->
+<section class="home-collection-slider container fade-in">
+  <div class="home-collection-header">
+    <h2>Agbada</h2>
+  </div>
+  
+  <div class="collection-slider">
+    <button class="slider-arrow prev-slide" aria-label="Previous">‹</button>
+    
+    <div class="collection-slider-track" id="homeAgbadaTrack">
+      <!-- Product 1 -->
+      <div class="product-card" data-code="FL-AGB-001" data-name="Embroidered Agbada" data-image="images/agbada/agbada1.webp" data-description="Handcrafted with premium fabric and intricate embroidery. Perfect for weddings and special occasions.">
+        <div class="product-image">
+          <img src="images/agbada/agbada1.webp" alt="Embroidered Agbada" loading="lazy">
+        </div>
+        <div class="product-info">
+          <p class="product-code" style="font-size: 1.1rem; font-weight: 700;">FL-AGB-001</p>
+          <button class="add-to-cart" data-code="FL-AGB-001">
+            <i class="fa-solid fa-plus"></i> Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card" data-code="FL-AGB-002" data-name="Gold Agbada" data-image="images/agbada/agbada2.webp" data-description="Luxurious gold embroidery on premium fabric. A statement piece for royal occasions.">
+        <div class="product-image">
+          <img src="images/agbada/agbada2.webp" alt="Gold Agbada" loading="lazy">
+        </div>
+        <div class="product-info">
+          <p class="product-code" style="font-size: 1.1rem; font-weight: 700;">FL-AGB-002</p>
+          <button class="add-to-cart" data-code="FL-AGB-002">
+            <i class="fa-solid fa-plus"></i> Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card" data-code="FL-AGB-003" data-name="Royal Agbada" data-image="images/agbada/agbada3.webp" data-description="Designed for royalty. Rich fabric with exquisite detailing.">
+        <div class="product-image">
+          <img src="images/agbada/agbada3.webp" alt="Royal Agbada" loading="lazy">
+        </div>
+        <div class="product-info">
+          <p class="product-code" style="font-size: 1.1rem; font-weight: 700;">FL-AGB-003</p>
+          <button class="add-to-cart" data-code="FL-AGB-003">
+            <i class="fa-solid fa-plus"></i> Add to Cart
+          </button>
+        </div>
+      </div>
     </div>
-  </footer>
 
-  <script src="script.js"></script>
+    <button class="slider-arrow next-slide" aria-label="Next">›</button>
+  </div>
+
+  <div class="slider-dots" id="homeAgbadaDots"></div>
+
+  <div class="home-collection-view-all">
+    <a href="agbada.html" class="btn-ghost">View All Agbada <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- ===== KAFTAN SLIDER (Homepage) ===== -->
+<section class="home-collection-slider container fade-in">
+  <div class="home-collection-header">
+    <h2>Kaftan</h2>
+  </div>
+  
+  <div class="collection-slider">
+    <button class="slider-arrow prev-slide" aria-label="Previous">‹</button>
+    
+    <div class="collection-slider-track" id="homeKaftanTrack">
+      <!-- Product 1 -->
+      <div class="product-card" data-code="FL-KAF-001" data-name="Embroidered Kaftan" data-image="images/kaftan/kaftan1.webp" data-description="Handcrafted with premium fabric and intricate embroidery. Perfect for weddings and special occasions.">
+        <div class="product-image">
+          <img src="images/kaftan/kaftan1.webp" alt="Embroidered Kaftan" loading="lazy">
+        </div>
+        <div class="product-info">
+          <p class="product-code" style="font-size: 1.1rem; font-weight: 700;">FL-KAF-001</p>
+          <button class="add-to-cart" data-code="FL-KAF-001">
+            <i class="fa-solid fa-plus"></i> Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card" data-code="FL-KAF-002" data-name="Gold Kaftan" data-image="images/kaftan/kaftan2.webp" data-description="Luxurious gold embroidery on premium fabric. A statement piece for royal occasions.">
+        <div class="product-image">
+          <img src="images/kaftan/kaftan2.webp" alt="Gold Kaftan" loading="lazy">
+        </div>
+        <div class="product-info">
+          <p class="product-code" style="font-size: 1.1rem; font-weight: 700;">FL-KAF-002</p>
+          <button class="add-to-cart" data-code="FL-KAF-002">
+            <i class="fa-solid fa-plus"></i> Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card" data-code="FL-KAF-003" data-name="Royal Kaftan" data-image="images/kaftan/kaftan3.webp" data-description="Designed for royalty. Rich fabric with exquisite detailing.">
+        <div class="product-image">
+          <img src="images/kaftan/kaftan3.webp" alt="Royal Kaftan" loading="lazy">
+        </div>
+        <div class="product-info">
+          <p class="product-code" style="font-size: 1.1rem; font-weight: 700;">FL-KAF-003</p>
+          <button class="add-to-cart" data-code="FL-KAF-003">
+            <i class="fa-solid fa-plus"></i> Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <button class="slider-arrow next-slide" aria-label="Next">›</button>
+  </div>
+
+  <div class="slider-dots" id="homeKaftanDots"></div>
+
+  <div class="home-collection-view-all">
+    <a href="kaftan.html" class="btn-ghost">View All Kaftan <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials container fade-in">
+  <h2>What Our Clients Say</h2>
+
+  <div class="testimonials-slider">
+    <div class="testimonial-slide active">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"One of the best fashion designers I've worked with. Their sense of style is top-notch, measurements are always accurate, and the finishing is clean. Whether it's casual, traditional, or something special, they always deliver quality. I'm definitely coming back again!!!"</p>
+        <div class="client">— Ola Fun</div>
+      </div>
+    </div>
+
+    <div class="testimonial-slide">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"The best plug that delivers the best when it comes to fashion and design, Fawlux Luxury Designer and Fashionista, is top notch: 'Designer Awon Lobaloba', name given by me🙌🙌."</p>
+        <div class="client">— Ahmod T. Abdulraheem</div>
+      </div>
+    </div>
+
+    <div class="testimonial-slide">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"FAWLUX delivered beyond my expectations! The fit of my agbada was perfect for my wedding. Attention to detail is exceptional."</p>
+        <div class="client">— Ibrahim A.</div>
+      </div>
+    </div>
+
+    <div class="testimonial-slide">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"Fast turnaround and premium quality. I've gotten multiple kaftans and shirts made - consistently excellent work."</p>
+        <div class="client">— Chinedu M.</div>
+      </div>
+    </div>
+
+    <div class="testimonial-slide">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"The best tailor in Lagos! Professional measurements, quality fabrics, and perfect stitching. Highly recommended!"</p>
+        <div class="client">— Adewale S.</div>
+      </div>
+    </div>
+
+    <button class="testimonial-arrow prev-testimonial" aria-label="Previous testimonial">
+      <svg viewBox="0 0 24 24" width="20" height="20">
+        <path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+      </svg>
+    </button>
+    <button class="testimonial-arrow next-testimonial" aria-label="Next testimonial">
+      <svg viewBox="0 0 24 24" width="20" height="20">
+        <path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+      </svg>
+    </button>
+
+    <div class="testimonial-dots">
+      <span class="testimonial-dot active" data-slide="0"></span>
+      <span class="testimonial-dot" data-slide="1"></span>
+      <span class="testimonial-dot" data-slide="2"></span>
+      <span class="testimonial-dot" data-slide="3"></span>
+      <span class="testimonial-dot" data-slide="4"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BAND ===== -->
+<section class="cta-band fade-in">
+  <div class="container">
+    <h2>Ready to look your best?</h2>
+    <a class="btn-cta" href="https://wa.me/2348079444199" target="_blank" rel="noopener">Chat on WhatsApp</a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <a href="index.html" class="foot-brand">
+      <div class="brand-line">F A W L U X</div>
+      <div class="tagline">Perfectly stitched.</div>
+    </a>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="collection.html">Collection</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="foot-social">
+      <a aria-label="Instagram" href="https://www.instagram.com/fawlux_?igsh=eGF3cjN1aHZkcTZj&utm_source=qr" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" class="icon"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a5 5 0 100 10 5 5 0 000-10zm6.5-.25a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z"/></svg>
+      </a>
+      <a aria-label="Facebook" href="https://www.facebook.com/share/17jm9NaSHL/?mibextid=wwXIfr" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" class="icon"><path d="M13 22v-8h3l1-4h-4V7a1 1 0 011-1h3V2h-3a5 5 0 00-5 5v3H6v4h3v8h4z"/></svg>
+      </a>
+      <a aria-label="TikTok" href="https://www.tiktok.com/@fawlux" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" class="icon"><path d="M21 9.5a7.5 7.5 0 01-5-1.8v6.6a6.3 6.3 0 11-5-6.1v3.7a2.6 2.6 0 102.1 2.6V2h2.9a5.7 5.7 0 004 3.8V9.5z"/></svg>
+      </a>
+      <a aria-label="Pinterest" href="https://pin.it/5FnKtXEIc" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" class="icon"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.237 2.636 7.855 6.356 9.312-.087-.791-.167-2.005.035-2.868.182-.78 1.172-4.971 1.172-4.971s-.299-.599-.299-1.483c0-1.388.805-2.425 1.808-2.425.853 0 1.264.64 1.264 1.408 0 .858-.546 2.14-.828 3.329-.236.996.5 1.807 1.48 1.807 1.778 0 3.144-1.874 3.144-4.579 0-2.394-1.72-4.068-4.177-4.068-2.845 0-4.515 2.134-4.515 4.34 0 .859.331 1.781.745 2.281a.3.3 0 01.069.286l-.278 1.131c-.043.183-.145.222-.334.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.472 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148 0 0-.502 1.91-.624 2.378-.226.868-.835 1.958-1.244 2.623.935.287 1.934.444 2.976.444 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="copyright">
+    © 2026 FAWLUX. All Rights Reserved.
+  </div>
+</footer>
+
+<!-- ===== BACK TO TOP ===== -->
+<button id="back-to-top" class="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" width="24" height="24">
+    <path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<!-- ===== CART MODAL ===== -->
+<div class="cart-modal" id="cartModal">
+  <div class="cart-modal-content">
+    <div class="cart-modal-header">
+      <h2>Your Cart</h2>
+      <button class="cart-close" id="cartClose">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="empty-cart">Your cart is empty.</p>
+    </div>
+    <div class="cart-footer">
+      <button class="btn-cta" id="checkoutBtn">Checkout on WhatsApp</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
