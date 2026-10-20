@@ -83,18 +83,53 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  // ===== UPDATED: COLLECTION CLICK BEHAVIOR (Shake + Navigate on 2nd Click) =====
   const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
+  let collectionClickCount = 0;
+
   dropdownTriggers.forEach(trigger => {
     trigger.addEventListener('click', function(e) {
+      // Only apply to "Collection" trigger (which has a chevron icon)
+      const isCollection = this.querySelector('.fa-chevron-down');
+      if (!isCollection) return;
+
+      // For mobile menu triggers only (inside .nav-links)
+      const isMobile = this.closest('.nav-links');
+      if (!isMobile) return;
+
       e.preventDefault();
+
       const menu = this.parentElement.querySelector('.dropdown-menu');
       const icon = this.querySelector('i');
+
+      // Shake animation
+      const parentItem = this.closest('.dropdown-trigger');
+      parentItem.classList.remove('shake');
+      void parentItem.offsetWidth; // Force reflow
+      parentItem.classList.add('shake');
+
+      // Toggle dropdown
       if (menu) {
         menu.classList.toggle('open');
         if (icon) icon.classList.toggle('open');
       }
+
+      // Increment click count
+      collectionClickCount++;
+
+      // On second click, navigate to collection.html
+      if (collectionClickCount >= 2) {
+        window.location.href = 'collection.html';
+      }
     });
   });
+
+  // Reset click count when menu closes
+  const originalCloseMenu = closeMenu;
+  closeMenu = function() {
+    originalCloseMenu();
+    collectionClickCount = 0;
+  };
 
   const themeSwitcher = document.getElementById('themeSwitcher');
   if (themeSwitcher) {
